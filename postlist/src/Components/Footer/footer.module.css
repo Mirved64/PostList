@@ -1,0 +1,19 @@
+.container {
+  max-width: 992px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.authorInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  width: 100%;
+  background-color: #ffffff;;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
