@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
-import ButtonAcess from '../button/ButtonAcess';
+import Btn from '../button/Btn';
 import MyInput from '../Input/MyInput';
 
-function PostForm({ create}) {
+function PostForm({ create }) {
   const [post, setPost] = useState({
     _id: Date.now(),
     image: '',
@@ -43,7 +43,7 @@ function PostForm({ create}) {
                    onChange = {(e) => setPost({...post, picUrl: e.target.value})}>
           </MyInput> */}
           
-          <ButtonAcess type="submit">Создать</ButtonAcess>
+          <Btn type="submit">Создать</Btn>
         </form>
   );
 }

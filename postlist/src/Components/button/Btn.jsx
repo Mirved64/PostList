@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Buttons.module.css'
 import cn from 'classnames'
 
-function ButtonAcess ({ children, ...props}) {
+function Btn ({ children, ...props}) {
   return (
     <button className={ cn(s.btnAcess, s.btn) }>
       {children}
@@ -10,4 +10,4 @@ function ButtonAcess ({ children, ...props}) {
   );
 }
 
-export default ButtonAcess;
+export default Btn;

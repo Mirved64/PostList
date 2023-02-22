@@ -1,8 +1,9 @@
 import React from 'react';
+import Btn from '../button/Btn';
 
 
 function Post(props) {
- 
+  
   return (
     <div className="">
       <div>
@@ -18,6 +19,7 @@ function Post(props) {
 					<h4>{props.post.title}</h4>		
 				</div>
 			</a>
+      <button onClick={() => props.remove(props.post)}>Удалить</button>
 		</div>
   );
 }

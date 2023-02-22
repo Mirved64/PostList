@@ -1,12 +1,12 @@
-import Card from '../Post/post';
+import Post from '../Post/post';
 
-function PostList({posts}) {
+function PostList({posts, remove}) {
   return (
 
     <div>
       <div className='posts'>
 			{posts.map((post) => 
-        <Card post={post} key={post._id}/>
+        <Post post={post} remove={remove} key={post._id}/>
       )}
       
 		</div>
