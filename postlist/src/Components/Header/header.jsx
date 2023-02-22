@@ -1,8 +1,10 @@
 import React from 'react';
 import Logo from '../Logo/logo'
 import s from './header.module.css'
+import api from './../../utils/Api'
 
-function Header({children, user, onUpdateUser}) {
+function Header() {
+
   
   return (
     <header className={s.header}>
@@ -15,10 +17,10 @@ function Header({children, user, onUpdateUser}) {
           <div className={s.user}>
             <span className={s.avatar}><img src='' alt=''/></span>
             <div>
-            {user?.email && <span>{user?.email}</span>}
-            {user?.name && <span>{user?.name}</span>} 
+            {/* {user?.email && <span>{user?.email}</span>}
+            {user?.name && <span>{user?.name}</span>}  */}
             </div>
-            <button type='button' className={s.btn} >Изменить</button>
+            {/* <button type='button' className={s.btn} >Изменить</button> */}
             
           </div>
         </div>
