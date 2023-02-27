@@ -8,7 +8,7 @@ class Api {
     this._baseUrl = baseUrl;
   }
 
-  getPostList(){
+  getPostsList(){
     return fetch(`${this._baseUrl}/v2/group-10/posts`, {
       headers: this._headers,
     }).then(onResponse)

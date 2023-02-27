@@ -1,25 +1,30 @@
 import React from 'react';
-import Btn from '../button/Btn';
+import s from './Post.module.css'
 
 
-function Post(props) {
+function Post({image, title, text, author, remove, post}) {
   
   return (
-    <div className="">
-      <div>
-        <img src={props.post.image} alt='author avatar'/>
-        <div>
-          <h2>{props.post._id}</h2>
-          {/* <h3>{props.author.about}</h3> */}
+    <div className={s.postWrapper}>
+      <div className={s.postHeader}>
+        <div className={s.authorInfo}>
+          <img className={s.avatar} src={author.avatar} alt='author avatar'/>
+          <div className=''>
+            <h2>{author.name}</h2>
+            <p className={s.about}>{author.about}</p>
+          </div>
         </div>
       </div>
-			<a href="/posts" className="">
-				<img src='' alt={props.post.title} className="" />
-				<div className="">
-					<h4>{props.post.title}</h4>		
+			<div className={s.cardContent}>
+				<img className={s.image} src={image} alt={title} />
+				<div className={s.body}>
+					<h5 className={s.title}><b>{title}</b></h5>
+          <p className={s.text}>{text}</p>		
 				</div>
-			</a>
-      <button onClick={() => props.remove(props.post)}>Удалить</button>
+			</div>
+      <div className=''>
+        <button onClick={() => remove(post)}>Удалить</button>
+      </div>
 		</div>
   );
 }

@@ -4,18 +4,24 @@ import Header from '../Components/Header/header';
 import Footer from '../Components/Footer/footer';
 import PostList from '../Components/PostList/postList';
 import PostForm from '../Components/PostForm/PostForm';
+import MyModal from '../Components/MyModal/MyModal';
+import api from './../utils/Api';
 
 function App() {
-  const [posts, setPosts] = useState ([
-    {image: 'http://dummyimage.com/400x200.png/5fa2dd/ffffff',
-     _id: '63e4fde859b98b038f77b47b',
-     title: 'Welcome to school in our Group-10'}, 
-    {image: 'https://picsum.photos/200', _id: '63e52a0559b98b038f77b4c5', title: 'Рандомная картинка'},
-    {image: 'https://img.myloview.com.br/quadros/lecanto-light-manha-de-fevereiro-fora-de-lecanto-florida-o-orvalho-que-havia-acumulado-na-grama-da-noite-anterior-criou-uma-nevoa-surreal-como-os-raios-do-sol-aqueceu-o-ar-400-71254643.jpg', _id: '63eb3d2c59b98b038f77b5e8', title: 'Собрание сочинений'}
-  ])
+  const [posts, setPosts] = useState ([])
+  const [modal, setModal] = useState(false)
+
+  useEffect(() => {
+    api.getPostsList()
+       .then((postsData) => {
+        setPosts(postsData)
+       })
+      .catch(err => console.log(err));
+  }, [])
 
   const createPost = (newPost) => {
-    setPosts([...posts, newPost])
+    setPosts([newPost, ...posts])
+    setModal(false)
   }
 
   const removePost = (post) => {
@@ -26,9 +32,15 @@ function App() {
     <div>
       <Header />
       <main>
-        <PostForm create={createPost} />
+        <button onClick={() => setModal(true)}>Создать пост</button>
+        <MyModal visible={modal} setVisible={setModal}>
+          <PostForm create={createPost} />
+        </MyModal>
         
-        <PostList posts={posts} remove={removePost}/>
+        {posts.length !== 0
+            ? <PostList posts={posts} remove={removePost}/>
+            : <h2>Посты отсутствуют</h2>
+        }
       </main>
       <Footer />
     </div>

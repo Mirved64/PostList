@@ -15,7 +15,7 @@ function PostForm({ create }) {
     e.preventDefault();
     const newPost = {...post, _id:Date.now()}
     create(newPost)
-    setPost({image: '', title: '', desk: ''})
+    setPost({image: '', title: '', text: ''})
   }
 
   

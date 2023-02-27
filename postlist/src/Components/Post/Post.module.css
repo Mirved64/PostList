@@ -1,0 +1,76 @@
+.postWrapper {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: 'tnum';
+  position: relative;
+  background: #fff;
+  border-radius: 2px;
+  display: grid;
+  grid-template-rows: minmax(0px, max-content) 10fr minmax(0px, max-content);
+  grid-template-columns: minmax(50px, max-content);
+}
+
+.postHeader {
+  padding: 24px 24px 10px 24px;
+  overflow: hidden;
+}
+
+.authorInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 50%;
+}
+
+.about {
+  color: darkgray;
+  font-size: small;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+}
+
+.cardContent {
+  overflow: hidden;
+  width: 1000px;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.image {
+  margin-bottom: 15px;
+  max-width: 100%;
+  width: 1000px;
+  vertical-align: middle;
+  border-style: none;
+}
+
+.text {
+  margin-bottom: 5px;
+  margin-top: 0;
+  white-space: monospace;
+  text-overflow: ellipsis;
+  height: 110px;
+}
+
+.body {
+  padding: 0px 24px;
+}
