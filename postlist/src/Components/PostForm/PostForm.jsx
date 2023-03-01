@@ -3,12 +3,13 @@ import { useState } from 'react';
 import Btn from '../button/Btn';
 import MyInput from '../Input/MyInput';
 
-function PostForm({ create }) {
+function PostForm({ create, author }) {
   const [post, setPost] = useState({
     _id: Date.now(),
     image: '',
     title: '',
-    desk: ''
+    text: '',
+    author 
   })
 
   const addNewPost = (e) => {

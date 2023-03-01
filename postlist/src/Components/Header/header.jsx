@@ -1,9 +1,9 @@
 import React from 'react';
 import Logo from '../Logo/logo'
 import s from './header.module.css'
-import api from './../../utils/Api'
 
-function Header() {
+
+function Header({user}) {
 
   
   return (
@@ -15,13 +15,12 @@ function Header() {
             <h1 className={s.title}>Реактивные посты</h1>
           </a>
           <div className={s.user}>
-            <span className={s.avatar}><img src='' alt=''/></span>
+            <div ><img className={s.avatar} src={user.avatar} alt=''/></div>
             <div>
-            {/* {user?.email && <span>{user?.email}</span>}
-            {user?.name && <span>{user?.name}</span>}  */}
-            </div>
-            {/* <button type='button' className={s.btn} >Изменить</button> */}
-            
+              <span>{user.email}</span><br/>
+              <span>{user.name}</span><br/>
+              <span>{user.about}</span>
+            </div>         
           </div>
         </div>
       </div>

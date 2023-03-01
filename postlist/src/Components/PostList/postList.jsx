@@ -11,15 +11,7 @@ function PostList({posts, remove}) {
       <div className={s.posts}>
         
           {posts.map((post) =>
-            <TransitionGroup>
-              <CSSTransition
-                key={post._id}
-                timeout={500}
-                classNames="post"
-              >
-                <Post post={post} remove={remove} {...post}/>
-              </CSSTransition>
-            </TransitionGroup>
+            <Post post={post} remove={remove} key={post._id} {...post}/>
           )}
         
 		  </div>
